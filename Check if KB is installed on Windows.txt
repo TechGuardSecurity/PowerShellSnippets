@@ -1,0 +1,1 @@
+get-hotfix | findstr "STRINGtoFIND"
