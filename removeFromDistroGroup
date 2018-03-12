@@ -1,0 +1,10 @@
+########################################
+#
+#  Nathan Layfield
+#  Run from domain controller
+#
+########################################
+
+$alias = Read-Host -Prompt 'Username you want to remove'
+Get-ADPrincipalGroupMembership -Identity $alias| where {$_.Name -notlike "Domain Users"} |% {Remove-ADPrincipalGroupMembership -Identity $alias -MemberOf $_ -Confirm:$false}
+
