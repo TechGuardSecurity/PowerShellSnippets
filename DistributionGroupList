@@ -1,0 +1,21 @@
+#####################################
+#
+#  Nathan Layfield
+#  Displays all distribution groups and users in group
+#  Run from Exchange
+#
+#####################################
+
+
+$saveto = "C:\Path\to\file\location.txt"
+
+
+ForEach ($group in Get-DistributionGroup){
+	
+
+	ForEach ($user in $group){
+	$user  = Get-DistributionGroupMember($group) 
+$group.name | out-file $saveto -append
+		  $user | out-file $saveto -append
+	echo "================================" | out-file $saveto -append}
+}
