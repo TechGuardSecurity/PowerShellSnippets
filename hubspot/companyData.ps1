@@ -26,6 +26,7 @@ $properties = ('name','eula_signed','contact_email')
 $headers=''
 $url_list =''
 $delimiter = '|'
+$date = (get-date).tostring('MM-dd-yyyy')
 
 #Company Specifics:
 $remoteComputer = "192.168.1.1"
@@ -45,7 +46,7 @@ if (!$cred){
 
 #need to set the location of the script
 $fileName = "tempFile.txt"
-$csvFile = "Company Report.csv"
+$csvFile = "Company Report.csv $date.csv" "
 
 #create url to query
 #example
